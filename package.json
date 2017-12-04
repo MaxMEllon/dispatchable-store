@@ -1,0 +1,34 @@
+{
+  "name": "shiga",
+  "version": "0.0.0",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel src --out-dir lib"
+  },
+  "dependencies": {
+    "eventemitter2": "^5.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "jsdoc": "^3.5.5"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "last 2 versions",
+              "safari >= 7"
+            ]
+          }
+        }
+      ],
+      "stage-0"
+    ]
+  }
+}
