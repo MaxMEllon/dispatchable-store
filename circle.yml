@@ -1,11 +1,3 @@
 machine:
   node:
-    version: 8.2
-
-dependencies:
-  override:
-    - npm install
-
-test:
-  - npm run test
-
+    version: 8.2.0
