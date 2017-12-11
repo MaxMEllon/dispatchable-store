@@ -4,11 +4,13 @@
   "main": "lib/index.js",
   "license": "MIT",
   "scripts": {
+    "prebuild": "npm run fix",
     "build": "npm-run-all --parallel build:*",
     "build:lib": "BABEL_ENV=production babel src --out-dir lib",
     "build:docs": "jsdoc ./src/index.js --configure .jsdoc.json --verbose",
     "pretest": "npm run build",
     "fix": "prettier --write src/*.js",
+    "test": "npm-run-all --parallel test:*",
     "test:ava": "nyc ava test/*.js",
     "test:lint": "eslint src/*.js"
   },
