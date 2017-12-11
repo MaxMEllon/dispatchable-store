@@ -6,9 +6,9 @@ const isFunc = (maybeFunc) => typeof maybeFunc == 'function';
 const isObj = (maybeObj) => typeof maybeObj == 'object';
 
 /**
- * ObservableStore class
+ * DispatchableStore class
  */
-class ObservableStore extends EventEmitter2 {
+class DispatchableStore extends EventEmitter2 {
   /**
    * @constructor
    * @param {Object} initialState
@@ -101,7 +101,7 @@ class ObservableStore extends EventEmitter2 {
   /**
    * @function
    * @name subscribe
-   * @memberof ObservableStore
+   * @memberof DispatchableStore
    * @desc call the callback function if changed the state.
    * but, doesn't called it,if state is not modified.
    * @param {Function} stateMapper - state => ({ state.anyProperty })
@@ -122,7 +122,7 @@ class ObservableStore extends EventEmitter2 {
   /**
     * @function
     * @name setState
-    * @memberof ObservableStore
+    * @memberof DispatchableStore
     * @desc update state of self
     * @private
     * @param {Object} action
@@ -136,4 +136,4 @@ class ObservableStore extends EventEmitter2 {
   }
 }
 
-module.exports = ObservableStore
+module.exports = DispatchableStore
