@@ -23,7 +23,6 @@ class ObservableStore extends EventEmitter2 {
   }
 
   /**
-   * getState()
    * @return {Object} state
    * @example
    *
@@ -34,8 +33,7 @@ class ObservableStore extends EventEmitter2 {
   }
 
   /**
-   * register()
-   * register a reducer to self
+   * @desc register a reducer to self
    * @param {Object} reducer
    * @example
    *
@@ -53,8 +51,7 @@ class ObservableStore extends EventEmitter2 {
   }
 
   /**
-   * dispatch
-   * dispatch to subscriber
+   * @desc dispatch to subscriber
    * @param {Object} action
    * @param {boolean} [chaind=false]
    * @example
@@ -84,8 +81,7 @@ class ObservableStore extends EventEmitter2 {
   }
 
   /**
-   * chain
-   * register a chain action to self.
+   * @desc register a chain action to self.
    * @params {string} action name
    * @params {Object} execution aciton
    * @example
@@ -103,10 +99,11 @@ class ObservableStore extends EventEmitter2 {
   }
 
   /**
-   * subscribe
-   *  call the callback function if changed the state.
-   *  but, doesn't called it,if state is not modified.
-   * @callback callback
+   * @function
+   * @name subscribe
+   * @memberof ObservableStore
+   * @desc call the callback function if changed the state.
+   * but, doesn't called it,if state is not modified.
    * @param {Function} stateMapper - state => ({ state.anyProperty })
    * @example
    *
@@ -123,8 +120,10 @@ class ObservableStore extends EventEmitter2 {
   }
 
   /**
-    * setState
-    * update state of self
+    * @function
+    * @name setState
+    * @memberof ObservableStore
+    * @desc update state of self
     * @private
     * @param {Object} action
     * @param {Object} prev

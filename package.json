@@ -4,7 +4,8 @@
   "main": "lib/index.js",
   "license": "MIT",
   "scripts": {
-    "build": "babel src --out-dir lib"
+    "build:lib": "babel src --out-dir lib",
+    "build:docs": "jsdoc ./src/index.js --configure .jsdoc.json --verbose"
   },
   "dependencies": {
     "eventemitter2": "^5.0.0"
@@ -13,7 +14,8 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-0": "^6.24.1",
-    "jsdoc": "^3.5.5"
+    "jsdoc": "^3.5.5",
+    "minami": "^1.2.3"
   },
   "babel": {
     "presets": [
