@@ -82,8 +82,8 @@ class DispatchableStore extends EventEmitter2 {
 
   /**
    * @desc register a chain action to self.
-   * @params {string} action name
-   * @params {Object} execution aciton
+   * @param {string} action name
+   * @param {Object} execution aciton
    * @example
    *
    * store.chain(actions.A, {
