@@ -1,25 +1,35 @@
 {
   "name": "dispatchable-store",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "lib/index.js",
   "license": "MIT",
   "scripts": {
     "build": "npm-run-all --parallel build:*",
-    "build:lib": "babel src --out-dir lib",
-    "build:docs": "jsdoc ./src/index.js --configure .jsdoc.json --verbose"
+    "build:lib": "BABEL_ENV=production babel src --out-dir lib",
+    "build:docs": "jsdoc ./src/index.js --configure .jsdoc.json --verbose",
+    "pretest": "npm run build",
+    "test": "nyc ava test/*.js"
   },
   "dependencies": {
     "eventemitter2": "^5.0.0"
   },
   "devDependencies": {
+    "ava": "^0.24.0",
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-0": "^6.24.1",
     "jsdoc": "^3.5.5",
     "minami": "^1.2.3",
-    "npm-run-all": "^4.1.2"
+    "npm-run-all": "^4.1.2",
+    "nyc": "^11.3.0"
   },
   "babel": {
+    "env": {
+      "development": {
+        "sourceMaps": "inline"
+      }
+    },
     "presets": [
       [
         "env",
