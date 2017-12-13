@@ -48,7 +48,7 @@ test('not updated case', t => {
 test('unsubscribe', t => {
   const store = t.context.store
   const callback = (_1, _2, state) => t.is(state, 1)
-  store.subscribe(state => state.foo)(callback)
+  const idx = store.subscribe(state => state.foo)(callback)
   store.dispatch({
     type: actions.A,
     payload: {
@@ -56,7 +56,7 @@ test('unsubscribe', t => {
     }
   })
 
-  store.unsubscribe(callback)
+  store.unsubscribe(idx)
   store.dispatch({
     type: actions.A,
     payload: {
